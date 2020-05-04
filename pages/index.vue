@@ -3,19 +3,19 @@
     <img
       id="1"
       class="hide"
-      src="~assets/images/IMG_0379.JPG"
+      src="/images/IMG_0379.JPG"
       data-audio="~assets/audio/ChicagoBulls.mp3"
     />
     <img
       id="2"
       class="hide"
-      src="~assets/images/IMG_0380.JPG"
+      src="/images/IMG_0380.JPG"
       data-audio="~assets/audio/TravisScott.mp3"
     />
     <img
       id="3"
       class="hide"
-      src="~assets/images/IMG_0381.JPG"
+      src="/images/IMG_0381.JPG"
       data-audio="~assets/audio/MambaOut.mp3"
     />
     <div id="main-image" style>
@@ -101,7 +101,7 @@ export default {
 }
 
 #main-image {
-  background-image: url("~assets/images/IMG_0379.JPG");
+  background-image: url("/images/IMG_0379.JPG");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
