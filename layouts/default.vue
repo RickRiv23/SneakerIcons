@@ -1,13 +1,15 @@
 <template>
   <div>
+    <header>
+      <h1>SNEAKERmoments</h1>
+    </header>
     <nuxt />
   </div>
 </template>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -51,5 +53,18 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+header {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  background: white;
+  position: fixed;
+  padding: 3vh 0px;
+}
+header h1 {
+  font-size: 3em;
+  color: black;
 }
 </style>
