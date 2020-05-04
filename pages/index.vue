@@ -4,29 +4,26 @@
       id="1"
       class="hide"
       src="/images/IMG_0379.JPG"
-      data-audio="~assets/audio/ChicagoBulls.mp3"
     />
     <img
       id="2"
       class="hide"
       src="/images/IMG_0380.JPG"
-      data-audio="~assets/audio/TravisScott.mp3"
     />
     <img
       id="3"
       class="hide"
       src="/images/IMG_0381.JPG"
-      data-audio="~assets/audio/MambaOut.mp3"
     />
     <div id="main-image" style>
       <div id="audio-player" v-on:mouseover="playAudio" v-on:mouseleave="endAudio" data-audio="1">
-        <audio id="player-1" class="player" src="~assets/audio/ChicagoBulls.mp3" preload="auto" controls>
+        <audio id="player-1" class="player" src="/audio/ChicagoBulls.mp3" preload="auto" controls>
           <source src="~assets/audio/ChicagoBulls.mp3"></source>
         </audio>
-        <audio id="player-2" class="player" src="~assets/audio/TravisScott.mp3" preload="auto" controls>
+        <audio id="player-2" class="player" src="/audio/TravisScott.mp3" preload="auto" controls>
           <source src="~assets/audio/TravisScott.mp3"></source>
         </audio>
-        <audio id="player-3" class="player" src="~assets/audio/MambaOut.mp3" preload="auto" controls>
+        <audio id="player-3" class="player" src="/audio/MambaOut.mp3" preload="auto" controls>
           <source src="~assets/audio/MambaOut.mp3"></source>
         </audio>
       </div>
@@ -50,7 +47,7 @@ export default {
     },
     selectRandom: function(e) {
       e.preventDefault;
-      const randNum = Math.floor(Math.random() * 3) + 1,
+      let randNum = Math.floor(Math.random() * 3) + 1,
         selectImage = document.getElementById(randNum).src,
         mainImage = document.getElementById("main-image"),
         audioPlayer = document.getElementById("audio-player"),
