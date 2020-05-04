@@ -1,31 +1,27 @@
 <template>
   <div class="container">
-    <div id="1" data-image="~/assets/images/IMG_0379.JPG" data-audio></div>
-    <div id="2" data-image="~/assets/images/IMG_0380.JPG" data-audio></div>
-    <div id="3" data-image="~/assets/images/IMG_0381.JPG" data-audio></div>
-    <div id="main-image">
-      <audio class="audio-player" v-on:hover="playAudio" data-audio="~/assets/audio/ChicagoBulls.mp3">
-      <source src="~/assets/audio/ChicagoBulls.mp3"></source>
-      </audio>
+    <img id="1" class="hide" src="~assets/images/IMG_0379.JPG" data-audio />
+    <img id="2" class="hide" src="~assets/images/IMG_0380.JPG" data-audio />
+    <img id="3" class="hide" src="~assets/images/IMG_0381.JPG" data-audio />
+    <div id="main-image" style>
+      <button
+        class="audio-player"
+        v-on:hover="playAudio"
+        data-audio="~/assets/audio/ChicagoBulls.mp3"
+      >
+        <!-- <source src="~assets/audio/ChicagoBulls.mp3"></source> -->
+      </button>
+      <button id="select-random" v-on:click="selectRandom" class="random">Random</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    playAudio: function(e) {
-      let audio = this.dataset.audio;
-      if (audio) {
-        let player = new Audio(audio);
-        player.play();
-        this.addEventListener("mouseleave", function(player) {
-          player.end();
-        });
-      }
-    },
-    endAudio: function(e) {}
-  }
+  head: {
+    script: [{ src: "~/assets/js/index.js" }]
+  },
+  methods: {}
 };
 </script>
 
@@ -62,7 +58,6 @@ export default {
 }
 
 #main-image {
-  background-image: url("~assets/images/IMG_0379.JPG");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -78,5 +73,18 @@ export default {
   width: 30vw;
   height: 30vh;
   cursor: pointer;
+}
+
+.random {
+  position: absolute;
+  bottom: 10vh;
+  font-size: 1em;
+  width: 200px;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.hide {
+  display: none;
 }
 </style>
