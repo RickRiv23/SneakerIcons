@@ -1,16 +1,27 @@
 <template>
   <div class="container">
-    <img id="1" class="hide" src="~assets/images/IMG_0379.JPG" data-audio />
-    <img id="2" class="hide" src="~assets/images/IMG_0380.JPG" data-audio />
-    <img id="3" class="hide" src="~assets/images/IMG_0381.JPG" data-audio />
+    <img
+      id="1"
+      class="hide"
+      src="~assets/images/IMG_0379.JPG"
+      data-audio="~/assets/audio/ChicagoBulls.mp3"
+    />
+    <img
+      id="2"
+      class="hide"
+      src="~assets/images/IMG_0380.JPG"
+      data-audio="~/assets/audio/TravisScott.mp3"
+    />
+    <img
+      id="3"
+      class="hide"
+      src="~assets/images/IMG_0381.JPG"
+      data-audio="~/assets/audio/MambaOut.mp3"
+    />
     <div id="main-image" style>
-      <button
-        class="audio-player"
-        v-on:hover="playAudio"
-        data-audio="~/assets/audio/ChicagoBulls.mp3"
-      >
+      <div class="audio-player" v-on:hover="playAudio" data-audio="~/assets/audio/ChicagoBulls.mp3">
         <!-- <source src="~assets/audio/ChicagoBulls.mp3"></source> -->
-      </button>
+      </div>
       <button id="select-random" v-on:click="selectRandom" class="random">Random</button>
     </div>
   </div>
@@ -18,10 +29,30 @@
 
 <script>
 export default {
-  head: {
-    script: [{ src: "~/assets/js/index.js" }]
-  },
-  methods: {}
+  methods: {
+    playAudio: function(e) {
+      let audio = this.dataset.audio;
+      if (audio) {
+        let player = new Audio(audio);
+        player.play();
+        // this.addEventListener("mouseleave", function(player) {
+        //   player.end();
+        // });
+      }
+    },
+    selectRandom: function(e) {
+      e.preventDefault;
+      const randNum = Math.floor(Math.random() * 3) + 1,
+        selectImage = document.getElementById(randNum).src,
+        mainImage = document.getElementById("main-image");
+      if (selectImage == `url(${mainImage.style.backgroundImage})`) {
+        selectRandom();
+      } else {
+        mainImage.style.backgroundImage = `url(${selectImage})`;
+      }
+      console.log(selectImage);
+    }
+  }
 };
 </script>
 
@@ -58,6 +89,7 @@ export default {
 }
 
 #main-image {
+  background-image: url("~assets/images/IMG_0379.JPG");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
