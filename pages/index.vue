@@ -4,22 +4,22 @@
       id="1"
       class="hide"
       src="~assets/images/IMG_0379.JPG"
-      data-audio="~/assets/audio/ChicagoBulls.mp3"
+      data-audio="~assets/audio/ChicagoBulls.mp3"
     />
     <img
       id="2"
       class="hide"
       src="~assets/images/IMG_0380.JPG"
-      data-audio="~/assets/audio/TravisScott.mp3"
+      data-audio="~assets/audio/TravisScott.mp3"
     />
     <img
       id="3"
       class="hide"
       src="~assets/images/IMG_0381.JPG"
-      data-audio="~/assets/audio/MambaOut.mp3"
+      data-audio="~assets/audio/MambaOut.mp3"
     />
     <div id="main-image" style>
-      <div id="audio-player" v-on:click="playAudio" data-audio="~/assets/audio/ChicagoBulls.mp3"></div>
+      <div id="audio-player" v-on:click="playAudio" data-audio="~assets/audio/ChicagoBulls.mp3"></div>
       <button id="select-random" v-on:click="selectRandom" class="random">Random</button>
     </div>
   </div>
